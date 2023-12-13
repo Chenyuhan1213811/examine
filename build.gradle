@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'idea' /* 同上  让Gradle自动生成Intellij的项目文件*/
+    id "eclipse"
+    id 'maven'
+    id 'maven-publish'
+}
+
+group 'com.apexinfo.livecloud.server.plugins.product'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    //compile 'com.apexinfo.livecloud.server.plugins.product:Studio:1.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+apply from: './task.gradle'
